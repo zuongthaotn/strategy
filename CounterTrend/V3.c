@@ -1,7 +1,7 @@
 #include "Strategy/Magnus/fixZorro.h" 
-#define RPM         "CMX", "DRH", "SCR", "SZC", "TDC"
+#define RPM         "APH", "ITA", "SCR"
 #define ASSETS      RPM 
-#define N           5
+#define N           3
 var getThreshHold(string ticker);
 
 function run()
@@ -17,21 +17,17 @@ function run()
         if(price() < t){
             enterLong();
         }
-        printf("\n ticker %s - current price %.2f - thresh hold %.2f", Asset, price(), getThreshHold(ticker));
+//        printf("\n ticker %s - current price %.2f - thresh hold %.2f", Asset, price(), getThreshHold(ticker));
 	}
 }
 var getThreshHold(string ticker){
 	float t;
 	switch(ticker){
-		case "CMX": t = 15.8105;
+		case "APH": t = 87.035;
 			break;
-		case "DRH": t = 7.3645000000000005;
+		case "ITA": t = 5.4178;
 			break;
 		case "SCR": t = 7.1585;
-			break;
-		case "SZC": t = 29.2005;
-			break;
-		case "TDC": t = 9.671700000000001;
 			break;
 	}
 	return t;
