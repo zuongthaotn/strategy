@@ -1,7 +1,7 @@
 #include "Strategy/Magnus/fixZorro.h" 
-#define RPM         "CMX", "DAG", "DPG"
+#define RPM         "BFC", "BMI", "DPG", "HPX", "KDC"
 #define ASSETS      RPM 
-#define N           3
+#define N           5
 var getThreshHold(string ticker);
 
 function run()
@@ -23,11 +23,15 @@ function run()
 var getThreshHold(string ticker){
 	float t;
 	switch(ticker){
-		case "CMX": t = 16.068;
+		case "BFC": t = 17.1495;
 			break;
-		case "DAG": t = 7.004;
+		case "BMI": t = 31.260500000000004;
 			break;
-		case "DPG": t = 31.003000000000004;
+		case "DPG": t = 32.548;
+			break;
+		case "HPX": t = 28.84;
+			break;
+		case "KDC": t = 37.801;
 			break;
 	}
 	return t;
